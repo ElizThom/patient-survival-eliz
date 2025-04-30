@@ -1,0 +1,31 @@
+{
+    "family": "sample-fargate-1",
+    "containerDefinitions": [
+        {
+            "name": "patient-survival-eliz",
+            "image": "782636843248.dkr.ecr.eu-north-1.amazonaws.com/patient-survival-pred-eliz-1:latest",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "containerPort": 8001,
+                    "hostPort": 8001,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "systemControls": []
+        }
+    ],
+    "executionRoleArn": "arn:aws:iam::782636843248:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "volumes": [],
+    "placementConstraints": [],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072"
+}
