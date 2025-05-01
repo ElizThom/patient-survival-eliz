@@ -46,12 +46,12 @@ in_smoking = gradio.Radio(["Yes", "No"], type="value", label="Smokes?", show_lab
 in_time = gradio.Slider(minimum=4, maximum=285, value=6, step=1, label='Follow-up period (days)', show_label=True)
 
 # Output response
-out_response = gradio.components.Textbox(type="text", label='Survive')
+out_response = gradio.components.Textbox(type="text", label='Will the patient survive?')
 
 
 # Gradio interface to generate UI link
 title = "Patient Survival Prediction"
-description = "Predict survival of patient with heart failure, given their clinical record"
+description = "Predict the survival rate of a patient with heart failure, given their clinical record"
 
 iface = gradio.Interface(fn = predict_death_event,
                          inputs = [in_age, in_anaemia, in_creatinine, in_diabetes, in_ejection,in_bp, in_platelets, in_serum_creatinine, in_serum_sodium, in_gender, in_smoking, in_time],
